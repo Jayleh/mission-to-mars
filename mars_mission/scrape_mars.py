@@ -1,5 +1,4 @@
 # Dependencies
-from pprint import pprint
 from bs4 import BeautifulSoup
 import requests
 from splinter import Browser
@@ -180,9 +179,6 @@ def scrape():
     mars_data["mars_weather_tweet"] = mars_weather_tweet
     mars_data["html_table"] = html_table
     mars_data["hemisphere_image_urls"] = hemisphere_image_urls
-
-    # Pretty print dictionary for debugging
-    pprint(mars_data)
 
     return mars_data
 
