@@ -1,0 +1,24 @@
+header, main {
+    font-family: Segoe UI,SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.navbar {
+	background: transparent;
+	font-weight: 600;
+}
+
+.jumbotron {
+	background-image: url('img/c0105546-milky_way_galactic_centre_composite-spl.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 500px;
+	margin-top: -80px;
+	padding-top: 170px;
+	text-align: center;
+
+}
+
+#jumbotron-title {
+	color: whitesmoke;
+	font-weight: 600;
+}
