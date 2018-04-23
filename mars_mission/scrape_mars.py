@@ -10,7 +10,7 @@ def init_browser():
     # Chromedriver path
     executable_path = {"executable_path": "webdriver/chromedriver.exe"}
 
-    return Browser("chrome", **executable_path, headless=False)
+    return Browser("chrome", **executable_path, headless=True)
 
 
 def mars_news():
@@ -101,7 +101,7 @@ def mars_facts():
     df = df.set_index(["Description"])
 
     # Convert to html string
-    html_table = df.to_html()
+    html_table = df.to_html(classes="table table-bordered table-sm table-hover")
 
     # Strip newlines
     html_table = html_table.replace('\n', '')

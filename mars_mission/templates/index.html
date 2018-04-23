@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
       crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}" />
     <title>Mission to Mars</title>
   </head>
 
@@ -28,8 +28,73 @@
     </header>
 
     <main>
-
-
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-md-12">
+            <h3>Latest Mars News</h3>
+            <h5>{{ mars.news_title }}</h5>
+            <p>{{ mars.news_p }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-lg-8">
+            <h3>Featured Mars Image</h3>
+            <img src="{{ mars.featured_img_url }}" class="img-fluid" width="300" alt="{{ mars.featured_img_url }}" />
+          </div>
+          <div class="col-xs-12 col-lg-4" id="weather">
+            <div class="col-xs-12">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Current Weather on Mars</h5>
+                  <p class="card-text">{{ mars.mars_weather_tweet }}</p>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="col-xs-12" id="mars-facts-table">
+              <h5>Mars Facts</h5>
+              {{ mars.html_table|safe }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <h3>Mars Hemispheres</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-lg-6">
+            <figure class="figure">
+              <img src="{{ mars.hemisphere_image_urls[0].image_url }}" class="figure-img img-fluid rounded" alt="{{ mars.hemisphere_image_urls[0].title }}">
+              <figcaption class="figure-caption">&mdash; {{ mars.hemisphere_image_urls[0].title }}</figcaption>
+            </figure>
+          </div>
+          <div class="col-xs-12 col-lg-6">
+            <figure class="figure">
+              <img src="{{ mars.hemisphere_image_urls[1].image_url }}" class="figure-img img-fluid rounded" alt="{{ mars.hemisphere_image_urls[0].title }}">
+              <figcaption class="figure-caption">&mdash; {{ mars.hemisphere_image_urls[1].title }}</figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-lg-6">
+            <figure class="figure">
+              <img src="{{ mars.hemisphere_image_urls[2].image_url }}" class="figure-img img-fluid rounded" alt="{{ mars.hemisphere_image_urls[0].title }}">
+              <figcaption class="figure-caption">&mdash; {{ mars.hemisphere_image_urls[2].title }}</figcaption>
+            </figure>
+          </div>
+          <div class="col-xs-12 col-lg-6">
+            <figure class="figure">
+              <img src="{{ mars.hemisphere_image_urls[3].image_url }}" class="figure-img img-fluid rounded" alt="{{ mars.hemisphere_image_urls[0].title }}">
+              <figcaption class="figure-caption">&mdash; {{ mars.hemisphere_image_urls[3].title }}</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
 
 
 
