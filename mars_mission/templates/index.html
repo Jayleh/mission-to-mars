@@ -45,9 +45,9 @@
         <div class="row">
           <div class="col-xs-12 col-lg-8">
             <h3>Featured Mars Image</h3>
-            <img src="{{ mars.featured_img_url }}" class="img-fluid" width="300" alt="Featured Image" />
+            <img src="{{ mars.featured_img_url }}" id="feat-img" class="img-fluid centered" alt="Featured Image" />
           </div>
-          <div class="col-xs-12 col-lg-4" id="weather">
+          <div class="col-xs-12 col-lg-4" id="aside">
             <div class="col-xs-12">
               <div class="card">
                 <div class="card-body">
@@ -56,9 +56,8 @@
                 </div>
               </div>
             </div>
-            <br>
             <div class="col-xs-12" id="mars-facts-table">
-              <h5>Mars Facts</h5>
+              <h5 id="mars-facts-title">Mars Facts</h5>
               {{ mars.html_table|safe }}
             </div>
           </div>
@@ -66,10 +65,11 @@
       </div>
       <div class="container">
         <div class="row">
-          <div class="col-xs-12">
+          <div id="hemis-title" class="col-xs-12 centered">
             <h3>Mars Hemispheres</h3>
           </div>
         </div>
+        <hr>
         <!-- Could add a for loop to render hemis imgs -->
         <div class="row">
           <div class="col-xs-12 col-lg-6">
@@ -80,7 +80,7 @@
           </div>
           <div class="col-xs-12 col-lg-6">
             <figure class="figure">
-              <img src="{{ mars.hemisphere_image_urls[1].image_url }}" class="figure-img img-fluid rounded" alt="{{ mars.hemisphere_image_urls[0].title }}">
+              <img src="{{ mars.hemisphere_image_urls[1].image_url }}" class="figure-img img-fluid rounded" alt="{{ mars.hemisphere_image_urls[1].title }}">
               <figcaption class="figure-caption">&mdash; {{ mars.hemisphere_image_urls[1].title }}</figcaption>
             </figure>
           </div>
@@ -88,13 +88,13 @@
         <div class="row">
           <div class="col-xs-12 col-lg-6">
             <figure class="figure">
-              <img src="{{ mars.hemisphere_image_urls[2].image_url }}" class="figure-img img-fluid rounded" alt="{{ mars.hemisphere_image_urls[0].title }}">
+              <img src="{{ mars.hemisphere_image_urls[2].image_url }}" class="figure-img img-fluid rounded" alt="{{ mars.hemisphere_image_urls[2].title }}">
               <figcaption class="figure-caption">&mdash; {{ mars.hemisphere_image_urls[2].title }}</figcaption>
             </figure>
           </div>
           <div class="col-xs-12 col-lg-6">
             <figure class="figure">
-              <img src="{{ mars.hemisphere_image_urls[3].image_url }}" class="figure-img img-fluid rounded" alt="{{ mars.hemisphere_image_urls[0].title }}">
+              <img src="{{ mars.hemisphere_image_urls[3].image_url }}" class="figure-img img-fluid rounded" alt="{{ mars.hemisphere_image_urls[3].title }}">
               <figcaption class="figure-caption">&mdash; {{ mars.hemisphere_image_urls[3].title }}</figcaption>
             </figure>
           </div>

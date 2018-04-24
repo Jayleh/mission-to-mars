@@ -11,7 +11,7 @@ header, main {
 	background-image: url('img/c0105546-milky_way_galactic_centre_composite-spl.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
-	height: 500px;
+	height: 580px;
 	margin-top: -80px;
 	padding-top: 170px;
 	text-align: center;
@@ -21,4 +21,75 @@ header, main {
 #jumbotron-title {
 	color: whitesmoke;
 	font-weight: 600;
+}
+
+.centered {
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card {
+	margin-top: 30px;
+}
+
+#mars-facts-title {
+	padding-left: 12.5px;
+}
+
+#mars-facts-table {
+	padding-top: 30px;
+}
+
+.dataframe {
+	font-size: 14px;
+}
+
+#hemis-title {
+	padding-top: 15px;
+	padding-bottom: 10px;
+}
+
+hr {
+	margin-top: 0rem;
+}
+
+.figure {
+    margin: 0px 10px 1rem;
+}
+
+@media (min-width: 576px) {
+	#feat-img {
+		width: 600px;
+		height: 785px;
+	}
+}
+
+@media (min-width: 992px) {
+	#feat-img {
+		width: 600px;
+		height: 785px;
+		padding: 15px;
+		margin-left: -25px;
+	}
+}
+
+@media (min-width: 1200px) {
+	#feat-img {
+		width: 600px;
+		height: 785px;
+		padding: 10px;
+		margin-left: 20px;
+	}
+	#aside {
+		padding-right: 45px;
+	}
+	
+	.card {
+		margin-top: 30px;
+	}
+
+	.dataframe {
+		font-size: 16px;
+	}
 }
