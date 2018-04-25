@@ -1,4 +1,5 @@
 # Dependencies
+import time
 from bs4 import BeautifulSoup
 import requests
 from splinter import Browser
@@ -20,6 +21,9 @@ def mars_news():
 
     # Retrieve page with the requests module
     response = requests.get(news_url)
+
+    # Explicit time wait
+    time.sleep(10)
 
     # Create BeautifulSoup object; parse with 'lxml'
     soup = BeautifulSoup(response.text, 'lxml')

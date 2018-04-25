@@ -1,6 +1,6 @@
 # Dependencies
 import os
-from flask import Flask, render_template, redirect
+from flask import Flask, jsonify, render_template, redirect
 from flask_pymongo import PyMongo
 import scrape_mars
 
@@ -14,7 +14,10 @@ def index():
     # Find mars data dictionary in mongodb
     mars = mongo.db.mars.find_one()
 
-    return render_template("index.html", mars=mars)
+    try:
+        return render_template("index.html", mars=mars)
+    except Exception:
+        return jsonify({"error": f"Please go to /scrape to load the initial data."}), 404
 
 
 @app.route("/scrape")
