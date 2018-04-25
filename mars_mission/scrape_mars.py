@@ -16,26 +16,23 @@ def init_browser():
 
 def mars_news():
     """Extract latest Mars news title and description"""
-    # Mars exploration program url
-    news_url = "https://mars.nasa.gov/news/"
+    with init_browser() as browser:
 
-    # Retrieve page with the requests module
-    response = requests.get(news_url)
+        # Mars exploration program url
+        news_url = "https://mars.nasa.gov/news/"
+        browser.visit(news_url)
 
-    # Explicit time wait
-    time.sleep(10)
+        # Maximize window
+        browser.driver.maximize_window()
 
-    # Create BeautifulSoup object; parse with 'lxml'
-    soup = BeautifulSoup(response.text, 'lxml')
+        # Latest news container
+        news_container = browser.find_by_css('div[class="list_text"]').first
 
-    # Retrieve containers containing news title and description
-    results = soup.find("div", class_="image_and_description_container")
+        # Grab news title
+        news_title = news_container.find_by_css("a").text.strip()
 
-    # Grab latest news title
-    news_title = results.find("img", class_="img-lazy")["alt"].strip()
-
-    # Grab latest news description
-    news_p = results.find("div", class_="rollover_description_inner").get_text().strip()
+        # Grab news title description
+        news_p = news_container.find_by_css('div[class="article_teaser_body"]').text.strip()
 
     return news_title, news_p
 
