@@ -23,8 +23,19 @@ header, main {
 	font-weight: 600;
 }
 
+.progress {
+	visibility: hidden;
+	height: 1px;
+	width: 350px;
+	margin-top: 50px;
+	background-color: transparent;
+}
+
+.progress-bar {
+	background-color: lightgray;
+}
+
 .centered {
-	display: block;
     margin-left: auto;
     margin-right: auto;
 }
