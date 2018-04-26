@@ -24,8 +24,7 @@ header, main {
 }
 
 .progress {
-	visibility: hidden;
-	height: 1px;
+	height: 1.5px;
 	width: 350px;
 	margin-top: 50px;
 	background-color: transparent;
