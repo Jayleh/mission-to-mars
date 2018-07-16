@@ -9,7 +9,7 @@ from selenium import webdriver
 def init_browser():
     """Create browser session from splinter"""
     # Chromedriver path
-    executable_path = {"executable_path": "mars_mission/webdriver/chromedriver.exe"}
+    # executable_path = {"executable_path": "mars_mission/webdriver/chromedriver.exe"}
     driver_path = os.environ.get('GOOGLE_CHROME_SHIM', None)
 
     chrome_options = webdriver.ChromeOptions()
@@ -17,7 +17,7 @@ def init_browser():
     chrome_options.add_argument('no-sandbox')
     chrome_options.add_argument('--headless')
 
-    return Browser("chrome", **executable_path, options=chrome_options, headless=True)
+    return Browser("chrome", executable_path="chromedriver", options=chrome_options, headless=True)
 
 
 def mars_news():
