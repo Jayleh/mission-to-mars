@@ -1,15 +1,23 @@
+import os
 from bs4 import BeautifulSoup
 import requests
 from splinter import Browser
 import pandas as pd
+from selenium import webdriver
 
 
 def init_browser():
     """Create browser session from splinter"""
     # Chromedriver path
     executable_path = {"executable_path": "mars_mission/webdriver/chromedriver.exe"}
+    driver_path = os.environ.get('GOOGLE_CHROME_SHIM', None)
 
-    return Browser("chrome", **executable_path, headless=True)
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.binary_location = driver_path
+    chrome_options.add_argument('no-sandbox')
+    chrome_options.add_argument('--headless')
+
+    return Browser("chrome", **executable_path, options=chrome_options, headless=True)
 
 
 def mars_news():
