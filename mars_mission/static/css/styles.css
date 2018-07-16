@@ -8,7 +8,7 @@ header, main {
 }
 
 .jumbotron {
-	background-image: url('img/c0105546-milky_way_galactic_centre_composite-spl.jpg');
+	background-image: url('../img/c0105546-milky_way_galactic_centre_composite-spl.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
 	height: 580px;

@@ -1,12 +1,6 @@
-# Dependencies
-import os
-from flask import Flask, jsonify, render_template, redirect
-from flask_pymongo import PyMongo
-import scrape_mars
-
-app = Flask(__name__)
-
-mongo = PyMongo(app)
+from flask import render_template, redirect, jsonify
+from mars_mission import app, mongo
+from mars_mission.scrape_mars import crawl
 
 
 @app.route("/")
@@ -26,7 +20,7 @@ def scrape():
     mars = mongo.db.mars
 
     # Call scrape function from scrape_mars to return all Mars data
-    data = scrape_mars.scrape()
+    data = crawl()
 
     # Update mars collection with mars data
     mars.update(
@@ -36,7 +30,3 @@ def scrape():
     )
 
     return redirect("http://localhost:5000/", code=302)
-
-
-if __name__ == '__main__':
-    app.run(debug=True)

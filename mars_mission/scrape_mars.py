@@ -1,4 +1,3 @@
-# Dependencies
 from bs4 import BeautifulSoup
 import requests
 from splinter import Browser
@@ -8,7 +7,7 @@ import pandas as pd
 def init_browser():
     """Create browser session from splinter"""
     # Chromedriver path
-    executable_path = {"executable_path": "webdriver/chromedriver.exe"}
+    executable_path = {"executable_path": "mars_mission/webdriver/chromedriver.exe"}
 
     return Browser("chrome", **executable_path, headless=True)
 
@@ -152,7 +151,7 @@ def mars_hemispheres():
     return hemisphere_image_urls
 
 
-def scrape():
+def crawl():
     """Master function to scrape all Mars data"""
     # Create mars_data dict to insert into mongo
     mars_data = {}
@@ -184,4 +183,4 @@ def scrape():
 
 
 if __name__ == '__main__':
-    scrape()
+    crawl()
