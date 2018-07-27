@@ -1,6 +1,10 @@
 # mission-to-mars
 Web application that scrapes various websites for data related to the Mission to Mars and displays the information in a single HTML page.
 
+![PNG](documentation/images/mars.PNG)
+
+![PNG](documentation/images/hemispheres.PNG)
+
 ## Webpage:
 * https://mars-journey.herokuapp.com/
 
